@@ -1,13 +1,19 @@
 from sqlalchemy import create_engine, text
+import os
 
-db_connection_string = "mysql+pymysql://fu1bao7d4a2mo5hmmmmr:pscale_pw_kTszmmr4jB64c1G6t2b44WDQ1To64FDXpJdylbsoKLu@aws.connect.psdb.cloud/flaskpythontutorial?charset=utf8mb4"
+# database: flaskpythontutorial
+# username: g6tiedivq7sgy6ccijl9
+# host: aws.connect.psdb.cloud
+# password: pscale_pw_rpQV331JU7SeronXWalfhnhVXcfkd56Ma7FRlS4t4QR
+
+
+
+db_connection_string = os.environ['DB_CONNECTION_STRING']
 
 engine = create_engine(db_connection_string,
                        connect_args={"ssl": {
                          "ssl_ca": "cert.pem"
                        }})
-
-
 def ListJobs():
   with engine.connect() as conn:
     result = conn.execute(text("select * from jobs"))
