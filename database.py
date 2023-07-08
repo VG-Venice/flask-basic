@@ -1,12 +1,8 @@
 from sqlalchemy import create_engine, text
 import os
 
-# database: flaskpythontutorial
 # username: g6tiedivq7sgy6ccijl9
-# host: aws.connect.psdb.cloud
 # password: pscale_pw_rpQV331JU7SeronXWalfhnhVXcfkd56Ma7FRlS4t4QR
-
-
 
 db_connection_string = os.environ['DB_CONNECTION_STRING']
 
