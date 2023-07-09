@@ -9,6 +9,7 @@
       font-weight: normal;
     }
       #h1first{
+        width: 100%;
     background: black;
     padding: 8px 0;
     margin-bottom: -5px;
@@ -21,9 +22,9 @@
     text-align: center;
   }
   #banner{
-    width: 104.25%;
+    width: 100.4%;
     height: 300px;
-    margin-left: -23.5px;
+    margin-left: -3.5px;
     object-fit: cover;
   }
   </style>
@@ -31,11 +32,21 @@
 <body>
      <h1 id="h1first"> {{company_name}} </h1> 
     <img id="banner" src="/static/img.jpg">
-  <h1> Apply for {{job.title}} at {{company_name}} today! </h1>
-  <h4> Job Location: {{job.location}} </h4>
-  <h4> Salary: {{job.currency}}{{job.salary}} </h4>
-  <h4> Job Responsibilities: {{job.responsbilities}} </h4>
-  <h4> Requirements for the job: {{job.requirements}} </h4>
-      <button style="border-radius: 0px;width: 103.25vw;margin-left: -25px;color: white;background-color: mediumpurple;" class="btn btn-light mx-auto mt-4 mb-3">Contact us</button>
+  <h1 class="mt-3 mb-3"> Apply for {{job.title}} at {{company_name}} today! </h1>
+  <h4 class="mt-3 mb-3"> Job Location: {{job.location}} </h4>
+  <h4 class="mt-3 mb-3"> Salary: {{job.currency}}{{job.salary}} </h4>
+  <h4 class="mt-3 mb-3"> Job Responsibilities: 
+    <ul>
+    {% for line in job.responsbilities.split("\n") %}
+      <li>{{line}}</li>
+    {% endfor %}
+    </ul>
+  </h4>
+  <h4 class="mt-3 mb-3"> Requirements for the job: 
+      {% for lines in job.requirements.split(",") %}
+      <li>{{lines}}</li>
+    {% endfor %}
+  </h4>
+      <button style="border-radius: 0px;width: 100vw;margin-left: -25px;color: white;background-color: mediumpurple;" class="btn btn-light mx-auto mt-4 mb-3"><a style="text-decoration: none;color: white;" href="/">Back to Homepage</a></button>
 </body>
 </html>
