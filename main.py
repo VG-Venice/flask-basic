@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from database import ListJobs, engine, load_job_from_db
+from database import ListJobs, engine, loadthe_job_from_db
 from sqlalchemy import text
 
 app = Flask(__name__)
@@ -21,6 +21,7 @@ def list_jobs():
 
 @app.route('/job/<id>')
 def show_job(id):
-  job = load_job_from_db(id)
-  return jsonify(job)
+  job = loadthe_job_from_db(id)
+  return str(job)
+  
 app.run(host='0.0.0.0', port=81, debug=True)
