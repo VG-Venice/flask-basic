@@ -12,7 +12,7 @@ def load_jobs_from_db():
 @app.route('/')
 def index():
   JOBS = ListJobs()
-  return render_template('home.html', jobs=JOBS, company_name="Baconz")
+  return render_template('home.html', jobs=JOBS, company_name="Baconz Careers")
 
 
 @app.route('/api/jobs')
@@ -22,6 +22,10 @@ def list_jobs():
 @app.route('/job/<id>')
 def show_job(id):
   job = loadthe_job_from_db(id)
-  return str(job)
-  
+  if not job:
+    return "Not found"
+  else: 
+    return render_template('jobpage.html', job=job, company_name="Baconz Careers")
+
+
 app.run(host='0.0.0.0', port=81, debug=True)

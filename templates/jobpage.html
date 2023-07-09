@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title> {{job.title}} - {{company_name}} Careers </title>
+  <style>
+    *{
+      font-family: 'Mouse Memoirs', sans-serif;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <h1> Apply for {{job.title}} at {{company_name}} today! </h1>
+  <h3> Job Location: {{job.location}} </h3>
+  <h3> Salary: {{job.currency}}{{job.salary}} </h3>
+  <h3> Job Responsibilities: {{job.responsbilities}} </h3>
+  <h3> Requirements for the job: {{job.requirements}} </h3>
+</body>
+</html>
