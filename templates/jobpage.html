@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
-  <meta charset="utf-8">
+  {% include 'bootstrap.html' %}
   <title> {{job.title}} - {{company_name}} Careers </title>
   <style>
     *{
       font-family: 'Mouse Memoirs', sans-serif;
       font-weight: normal;
     }
+      #h1first{
+    background: black;
+    padding: 8px 0;
+    margin-bottom: -5px;
+  }
+  h1{
+    font-size: 45px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-weight: normal;
+    color: mediumpurple;
+    text-align: center;
+  }
+  #banner{
+    width: 104.25%;
+    height: 300px;
+    margin-left: -23.5px;
+    object-fit: cover;
+  }
   </style>
 </head>
 <body>
+     <h1 id="h1first"> {{company_name}} </h1> 
+    <img id="banner" src="/static/img.jpg">
   <h1> Apply for {{job.title}} at {{company_name}} today! </h1>
-  <h3> Job Location: {{job.location}} </h3>
-  <h3> Salary: {{job.currency}}{{job.salary}} </h3>
-  <h3> Job Responsibilities: {{job.responsbilities}} </h3>
-  <h3> Requirements for the job: {{job.requirements}} </h3>
+  <h4> Job Location: {{job.location}} </h4>
+  <h4> Salary: {{job.currency}}{{job.salary}} </h4>
+  <h4> Job Responsibilities: {{job.responsbilities}} </h4>
+  <h4> Requirements for the job: {{job.requirements}} </h4>
+      <button style="border-radius: 0px;width: 103.25vw;margin-left: -25px;color: white;background-color: mediumpurple;" class="btn btn-light mx-auto mt-4 mb-3">Contact us</button>
 </body>
 </html>
