@@ -1,12 +1,12 @@
 from sqlalchemy import create_engine, text
 
 # database: flaskpythontutorial
-# username: 7udvach8ptc5j41hg86b
+# username: q5ypnu7ke2nuriun8pqc
 # host: aws.connect.psdb.cloud
-# password: pscale_pw_DA5uVQWoiHr6d0xAgsaNksaM9Y3XRFos3YJmOlrA0Vu
+# password: pscale_pw_EhWnGlz6m9bMJhAui67lR2NguO8sWcSKAe57ENyCdrY
 
 
-engine = create_engine("mysql+pymysql://7udvach8ptc5j41hg86b:pscale_pw_DA5uVQWoiHr6d0xAgsaNksaM9Y3XRFos3YJmOlrA0Vu@aws.connect.psdb.cloud/flaskpythontutorial?charset=utf8mb4",
+engine = create_engine("mysql+pymysql://q5ypnu7ke2nuriun8pqc:pscale_pw_EhWnGlz6m9bMJhAui67lR2NguO8sWcSKAe57ENyCdrY@aws.connect.psdb.cloud/flaskpythontutorial?charset=utf8mb4",
                        connect_args={"ssl": {
                          "ssl_ca": "cert.pem"
                        }})
@@ -27,3 +27,10 @@ def ListJobs():
       "requirements": row.requirements,
     }))
   return result_dicts
+
+def load_job_from_db(id):
+  with engine.connect() as conn:
+    result = conn.execute(
+      text("SELECT * FROM jobs WHERE id = :val"),
+      val = id
+    )
