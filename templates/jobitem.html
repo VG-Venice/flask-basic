@@ -1,12 +1,21 @@
-
-<div class="border-bottom border-dark-subtle row" style="padding-bottom: 5px;border-style: solid black 2px;margin-bottom: 16px;">
-       <div class="col-9"> 
-    <h4 style="color: grey;">{{job['title']}}</h4>
-    <div style="color: tomato;" class="">Location:  {{job['location']}}</div>
-      <div style="color: tomato;">Salary:  {{job['salary']}} {{job['currency']}}</div>
-     </div>
+<div
+  class="border-bottom border-dark-subtle row"
+  style="
+    padding-bottom: 5px;
+    border-style: solid black 2px;
+    margin-bottom: 16px;
+  "
+>
+  <div class="col-9">
+    <h4 style="color: grey">{{job['title']}}</h4>
+    <div style="color: tomato" class="">Location: {{job['location']}}</div>
+    <div style="color: tomato">
+      Salary: {{job['salary']}} {{job['currency']}}
+    </div>
+  </div>
   <div class="col-3">
-    <button type="button" class="btn btn-outline-primary"><a href="/job/{{job['id']}}" style="text-decoration: none;">Apply Now</a></button>
-      </div>
-
+    <button type="button" class="btn btn-outline-primary">
+      <a href="/job/{{job['id']}}" style="text-decoration: none">Apply Now</a>
+    </button>
+  </div>
 </div>

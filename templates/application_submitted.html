@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'bootstrap.html' %}
+    <title>Submitted Successfully</title>
+  </head>
+  <body>
+    <label for="full_name"> Full Name </label><br />
+    <div>{{application['full_name']}}</div>
+    <br />
+    <label for="full_name"> Email </label><br />
+    <div>{{application['email']}}</div>
+    <br />
+    <label for="full_name"> LinkedIn URL </label><br />
+    <div>{{application['linkedin_url']}}</div>
+    <br />
+    <label for="full_name"> Qualifications </label><br />
+    <div>{{application['education']}}</div>
+    <br />
+    <label for="full_name"> Work Experience </label><br />
+    <div>{{application['work_experience']}}</div>
+    <br />
+    <label for="full_name"> Resume Link </label><br />
+    <div>{{application['resume_url']}}</div>
+    <br />
+  </body>
+</html>

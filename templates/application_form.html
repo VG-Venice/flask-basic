@@ -1,57 +1,69 @@
 <style>
-  h2{
+  h2 {
     margin-left: 12px;
   }
-  i{
+  i {
     margin-right: 15px;
     margin-left: 10px;
   }
-  input{
+  input {
     border-radius: 0;
+    border: none;
+    border-bottom: 2px gray solid;
   }
   .float-container {
-
     padding: 20px;
-}
- .float-child {
+  }
+  .float-child {
     width: 50%;
     float: left;
-} 
-.mx-2{
-  width: 8vw;
-
-}
-input{
-  height: 35px;
-  width: 20vw;
-}
+  }
+  .mx-2 {
+    width: auto;
+  }
+  input {
+    height: 35px;
+    width: 25vw;
+  }
+  label {
+    font-size: 20px;
+  }
 </style>
-<h2> Application Form for {{job.title}} </h2>
-<form action="/job/{{job['id']}}/apply">
+<h2>Application Form for {{job.title}}</h2>
+<form action="/job/{{job['id']}}/apply" method="post">
   <div class="float-container mb-2">
     <div class="float-child mb-2">
-      <label for="full_name"> Full Name </label><br/>
-      <input type="text" name="full_name" placeholder="John Doe"/>
-      <br/>
-      <label for="full_name"> Email </label><br/>
-      <input type="email" name="email" placeholder="john@doe.com"/>
-      <br/>
-      <label for="full_name"> LinkedIn URL </label><br/>
-      <input type="" name="linkedin_url" placeholder="https://linked.com/in/johndoe"/>
-      <br/>
+      <label for="full_name"> Full Name </label><br />
+      <input type="text" name="full_name" placeholder=" John Doe" />
+      <br />
+      <label for="full_name"> Email </label><br />
+      <input type="email" name="email" placeholder=" john@doe.com" />
+      <br />
+      <label for="full_name"> LinkedIn URL </label><br />
+      <input type="text" name="linkedin_url" placeholder=" https://linked.com/in/johndoe"/>
+      <br />
     </div>
     <div class="float-child mb-5">
-      <label for="full_name"> Qualifications </label><br/>
-      <input type="text" name="qualifications" placeholder=""/>
-      <br/>
-      <label for="full_name"> Work Experience </label><br/>
-      <input type="text" name="work_experience" placeholder="Work Experience"/>
-      <br/>
-      <label for="full_name"> Resume Link </label><br/>
-      <input type="text" name="resume_link" placeholder="Resume link"/>
-      <br/>
+      <label for="full_name"> Qualifications </label><br />
+      <input type="text" name="education" placeholder=" Degrees or courses" />
+      <br />
+      <label for="full_name"> Work Experience </label><br />
+      <input
+        type="text"
+        name="work_experience"
+        placeholder=" Work Experience"
+      />
+      <br />
+      <label for="full_name"> Resume Link </label><br />
+      <input type="text" name="resume_url" placeholder=" Resume link" />
+      <br />
     </div>
   </div>
-  <input style="text-align: center;display: inline;" class="mx-2" type="submit" value="Submit Application"/>
+  <input
+    style="text-align: center; display: inline"
+    class="mx-2"
+    type="submit"
+    value="Submit Application"
+  />
 </form>
-<br/>
+<br />
