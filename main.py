@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from database import ListJobs, engine, loadthe_job_from_db
 from sqlalchemy import text
 
@@ -27,5 +27,9 @@ def show_job(id):
   else: 
     return render_template('jobpage.html', job=job, company_name="Baconz Careers")
 
-
+@app.route('/job/<id>/apply')
+def apply_to_job(id):
+  data = request.args
+  return jsonify(data)
+  
 app.run(host='0.0.0.0', port=81, debug=True)

@@ -1,11 +1,11 @@
 from sqlalchemy import create_engine, text
 
 # database: flaskpythontutorial
-# username: 5nc97tr3pkj1dfwgzqep
+# username: q09yhgb1jx6ne6hhwfxw
 # host: aws.connect.psdb.cloud
-# password: pscale_pw_fIAUwbzaOXgDfsl2bBBNkeBpHy4O0JEdbdvxwZvnjO1
+# password: pscale_pw_XOd4H2TvG7OKjPFOLydezLcD1wcLOpE089GNu2Rudgx
 
-engine = create_engine("mysql+pymysql://5nc97tr3pkj1dfwgzqep:pscale_pw_fIAUwbzaOXgDfsl2bBBNkeBpHy4O0JEdbdvxwZvnjO1@aws.connect.psdb.cloud/flaskpythontutorial?charset=utf8mb4",
+engine = create_engine("mysql+pymysql://q09yhgb1jx6ne6hhwfxw:pscale_pw_XOd4H2TvG7OKjPFOLydezLcD1wcLOpE089GNu2Rudgx@aws.connect.psdb.cloud/flaskpythontutorial?charset=utf8mb4",
                        connect_args={"ssl": {
                          "ssl_ca": "cert.pem"
                        }})
