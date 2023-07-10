@@ -1,12 +1,14 @@
 from sqlalchemy import create_engine, text
 
-# database: flaskpythontutorial
-# username: l0mifrkzqla2xirrkp1w
-# host: aws.connect.psdb.cloud
-# password: pscale_pw_446BdNQF7ShiisETxkoSiJOVcNs2E85qDecDcW7Js2x
+'''
+database: flaskpythontutorial
+username: pfvssbx1h1sjcua4vzl8
+host: aws.connect.psdb.cloud
+password: pscale_pw_SRPWEmfLZbXCuZWgynuYsR7AheZwetzLO6HxTSWvQRe
+'''
 
 engine = create_engine(
-  "mysql+pymysql://l0mifrkzqla2xirrkp1w:pscale_pw_446BdNQF7ShiisETxkoSiJOVcNs2E85qDecDcW7Js2x@aws.connect.psdb.cloud/flaskpythontutorial?charset=utf8mb4",
+  "mysql+pymysql://pfvssbx1h1sjcua4vzl8:pscale_pw_SRPWEmfLZbXCuZWgynuYsR7AheZwetzLO6HxTSWvQRe@aws.connect.psdb.cloud/flaskpythontutorial?charset=utf8mb4",
   connect_args={"ssl": {
     "ssl_ca": "cert.pem"
   }})
