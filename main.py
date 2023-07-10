@@ -29,7 +29,8 @@ def show_job(id):
 
 @app.route('/job/<id>/apply', methods=['post'])
 def apply_to_job(id):
+  job = loadthe_job_from_db(id)
   data = request.form
-  return render_template('application_submitted.html', application=data)
+  return render_template('application_submitted.html', application=data, company_name="Baconz Careers", job=job)
   
 app.run(host='0.0.0.0', port=81, debug=True)
