@@ -23,7 +23,7 @@ def list_jobs():
 def show_job(id):
   job = loadthe_job_from_db(id)
   if not job:
-    return "Not found"
+    return "Not found", 404
   else: 
     return render_template('jobpage.html', job=job, company_name="Baconz Careers")
 
